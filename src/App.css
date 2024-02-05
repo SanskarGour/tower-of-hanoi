@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+.app {
+  position: relative;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tower {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  cursor: pointer;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.tower .line {
+  position: relative;
+  background-color: white;
+  width: 5px;
+  height: 150px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tower:hover .line {
+  background-color: rgb(250, 72, 72);
+}
+
+.disc{
+  background-color: rgb(0, 60, 255);
+  height: 15px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+}
+
+.discs{
+  position: absolute;
   display: flex;
   flex-direction: column;
+  justify-content: end;
   align-items: center;
+}
+
+.tower.selected .line{
+  background: rgb(251, 251, 61);
+}
+
+.user-input{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.app input{
+  background: #fff;
+  color: #000;
+  padding: 5px;
+  width: 10rem;
+  height: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app .btn{
+  background: #fff;
+  color: #000;
+  padding: 5px;
+  width: 3rem;
+  height: 2rem;
 }
