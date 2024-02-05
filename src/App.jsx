@@ -89,13 +89,13 @@ function App() {
             }
             key={towerIdx}
           >
-            <div className="line"></div>
+            <div className="line" style={{ height: `${NUM_DISCS * 2 + 5 }rem`}}></div>
             <div className="discs">
               {discs.reverse().map((discNumber) => (
                 <div
                   className="disc"
                   key={discNumber}
-                  style={{ width: discNumber * 20 + 20 }}
+                  style={{ width: discNumber * 20 + 40 }}
                 >
                   {discNumber}
                 </div>
