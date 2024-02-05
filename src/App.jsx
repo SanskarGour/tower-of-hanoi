@@ -3,8 +3,8 @@ import "./App.css";
 import React from "react";
 
 function App() {
-  const [NUM_DISCS , setNUM_DISCS] = useState(0);
-  const [towers, setTowers] = useState([[], [], []]);
+  const [NUM_DISCS , setNUM_DISCS] = useState(3);
+  const [towers, setTowers] = useState([[3 , 2 , 1], [], []]);
   const [selectedTowerIdx, setSelectedTowerIdx] = useState(undefined);
 
   function handleClickedTower(clickedTowerIdx) {
@@ -40,8 +40,8 @@ function App() {
   }
 
   const changeHandler = (event) => {
-    if(event.target.value <= 0){
-      alert("Value Cannot be below one!");
+    if(event.target.value <= 3){
+      alert("Value should be greater than THREE");
       return;
     }else{
       setNUM_DISCS(event.target.value);
@@ -50,20 +50,19 @@ function App() {
   };
 
   function clickHandler (){
+    if(NUM_DISCS <= 3){
+      alert("Value should be greater than THREE");
+      return;
+    }
     initialiseArray()
   }
 
   function initialiseArray(){
     const newArray = Array.from({ length: NUM_DISCS }, (_, index) => index + 1);
-    console.log(newArray);
-    setTowers(newArray);
+    // console.log(towers);
+    setTowers([newArray,[],[]]);
     console.log(towers);
   }
-
-  useEffect(()=>{
-    // console.log('object');
-    // console.log([...new Array(NUM_DISCS)]);
-  },[])
 
   return (
     <div className="app">
@@ -71,12 +70,13 @@ function App() {
         <input 
         name="NUM_DISCS"
         type="number" 
+        value={NUM_DISCS}
         onChange={changeHandler}>
         </input>
         <button 
         className="btn" 
         onClick={()=>clickHandler()}>
-          Play
+          PLAY
         </button>
       </div>
       
