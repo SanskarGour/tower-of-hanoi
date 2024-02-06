@@ -81,20 +81,8 @@ function App() {
 
     towerOfHanoi(NUM_DISCS, 0, 2, 1);
     setSolution(res);
-    
+
     console.log(solution);
-
-    // solution.forEach((move) => {
-    //   // debugger;
-    //   let newTowers = [...towers];
-    //   console.log(newTowers);
-    //   let poppedDisc = newTowers[move[0]][0];
-    //   newTowers[move[0]].shift();
-    //   newTowers[move[1]].unshift(poppedDisc);
-
-    //   console.log(newTowers);
-    //   setTowers(newTowers);
-    // });
   }
 
   function nextHandler() {
@@ -124,7 +112,7 @@ function App() {
       return;
     }
 
-    let move = sol[currIdx-1];
+    let move = sol[currIdx - 1];
     setCurrIdx((prev) => prev - 1);
     console.log(move);
     let newTowers = [...towers];
@@ -141,13 +129,13 @@ function App() {
       alert("Value should be greater than THREE");
       return;
     }
-    initialiseArray();  
+    initialiseArray();
     solveTowerOfHanoi();
     return;
   }
 
   return (
-    <div>
+    <div className="app">
       <div className="navbar">
         <button className="btn" onClick={() => setSolve((prev) => !prev)}>
           {!solve ? `Solve Yourself` : `Let Algo Solve for you`}
@@ -181,14 +169,17 @@ function App() {
         <button className="btn" onClick={() => reset()}>
           RESET
         </button>
-        <button className="btn" onClick={() => prevHandler()}>
-          PREV
-        </button>
-        <button className="btn" onClick={() => nextHandler()}>
-          NEXT
-        </button>
+        {!solve ? (
+          <div className="flex gap-[1rem]">
+            <button className="btn" onClick={() => prevHandler()}>
+              PREV
+            </button>
+            <button className="btn" onClick={() => nextHandler()}>
+              NEXT
+            </button>
+          </div>
+        ) : null}
       </div>
-
 
       <div className="main">
         {towers.map((discs, towerIdx) => {
