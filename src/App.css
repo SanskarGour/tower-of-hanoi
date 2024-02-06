@@ -1,14 +1,25 @@
-.app {
+.main {
   position: relative;
   background-color: #000;
   color: #fff;
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 3rem);
   justify-content: center;
   align-items: center;
   gap: 10rem;
   font-weight: 600;
+}
+
+.navbar{
+  height: 3rem;
+  width: 100vw;
+  background: #000;
+  color: #fff;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .tower {
@@ -35,7 +46,7 @@
   background-color: rgb(250, 72, 72);
 }
 
-.disc{
+.disc {
   background-color: rgb(0, 60, 255);
   height: 2rem;
   border: #817eff;
@@ -47,7 +58,7 @@
   font-size: 13px;
 }
 
-.discs{
+.discs {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -55,11 +66,11 @@
   align-items: center;
 }
 
-.tower.selected .line{
+.tower.selected .line {
   background: rgb(251, 251, 61);
 }
 
-.user-input{
+.user-input {
   position: absolute;
   bottom: 5rem;
   display: flex;
@@ -68,7 +79,7 @@
   gap: 10px;
 }
 
-.app input{
+.input-field {
   border-radius: 15px;
   background: #fff;
   color: #000;
@@ -78,12 +89,16 @@
   height: 2rem;
 }
 
-.app .btn{
+.btn {
   font-size: 11.75px;
   border-radius: 15px;
   background: #2925ff;
   color: #fff;
-  padding: 5px;
-  width: 3rem;
+  padding: 5px 10px 5px 10px;
+  font-weight: 600;
   height: 2rem;
+}
+
+.btn:active{
+  background: #5e5cff;
 }
