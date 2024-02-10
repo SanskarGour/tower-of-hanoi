@@ -202,15 +202,25 @@ function App() {
                 style={{ height: `${NUM_DISCS * 2 + 5}rem` }}
               ></div>
               <div className="discs">
-                {discs.reverse().map((discNumber) => (
-                  <div
-                    className="disc"
-                    key={discNumber}
-                    style={{ width: discNumber * 20 + 40 }}
-                  >
-                    {discNumber}
-                  </div>
-                ))}
+                {solve
+                  ? discs.reverse().map((discNumber) => (
+                      <div
+                        className="disc"
+                        key={discNumber}
+                        style={{ width: discNumber * 20 + 40 }}
+                      >
+                        {discNumber}
+                      </div>
+                    ))
+                  : discs.map((discNumber) => (
+                      <div
+                        className="disc"
+                        key={discNumber}
+                        style={{ width: discNumber * 20 + 40 }}
+                      >
+                        {discNumber}
+                      </div>
+                    ))}
               </div>
             </div>
           );
